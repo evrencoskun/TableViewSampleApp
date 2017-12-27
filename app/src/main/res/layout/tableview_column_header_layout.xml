@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/column_header_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/table_view_cell_height"
+    android:background="@color/unselected_header_background_color"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/column_header_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:textColor="@color/unselected_text_color"
+                android:textSize="@dimen/table_view_default_text_size"
+                tools:text="Header Data"/>
+
+            <ImageButton
+                android:id="@+id/column_header_sort_imageButton"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="end|center"
+                android:layout_marginLeft="4dp"
+                android:background="@android:color/transparent"
+                android:paddingRight="-5dp"
+                android:scaleType="fitXY"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_down"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="bottom"
+            android:background="@color/separator_color"/>
+    </FrameLayout>
+</LinearLayout>

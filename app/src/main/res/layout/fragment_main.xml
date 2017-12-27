@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.evrencoskun.tableviewsample2.MainFragment">
+
+    <com.evrencoskun.tableview.TableView
+        android:id="@+id/my_TableView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:column_header_height="@dimen/table_view_cell_height"
+        app:row_header_width="@dimen/table_view_row_header_width"
+        app:selected_color="@color/selected_background_color"
+        app:shadow_color="@color/shadow_background_color"
+        app:unselected_color="@color/unselected_background_color"
+        app:separator_color="@color/separator_color"/>
+
+
+</FrameLayout>

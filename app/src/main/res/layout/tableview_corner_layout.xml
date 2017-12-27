@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="@dimen/table_view_row_header_width"
+                android:layout_height="@dimen/table_view_cell_height"
+                android:background="@color/unselected_header_background_color">
+
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@color/separator_color"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/separator_color"/>
+</RelativeLayout>

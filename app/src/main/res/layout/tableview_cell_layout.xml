@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/cell_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/table_view_cell_height"
+    android:background="@color/unselected_background_color"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/cell_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/unselected_text_color"
+        android:textSize="@dimen/table_view_default_text_size"
+        tools:text="Cell Data"/>
+
+</LinearLayout>

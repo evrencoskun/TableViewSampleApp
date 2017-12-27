@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="table_view_cell_height">28dp</dimen>
+    <dimen name="table_view_row_header_width">28dp</dimen>
+    <dimen name="table_view_default_text_size">11sp</dimen>
+</resources>
