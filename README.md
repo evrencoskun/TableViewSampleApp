@@ -20,8 +20,14 @@
 
 ## Introduction
 
-- Details..
+- This is a <a href="https://github.com/evrencoskun/TableView">TableView library</a> sample app that is designed to show you how to create your advanced TableView in your application.
 
+## Libs used in sample app:
+
+- JSON data : https://github.com/ratiw/vue-table
+- Volley
+- GSON
+- MoneyTextView
 
 ## License
 
