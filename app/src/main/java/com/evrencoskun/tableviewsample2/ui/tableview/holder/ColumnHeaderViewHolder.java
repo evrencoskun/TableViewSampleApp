@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.holder;
+package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
@@ -11,7 +11,7 @@ import com.evrencoskun.tableview.ITableView;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractSorterViewHolder;
 import com.evrencoskun.tableview.sort.SortState;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.model.ColumnHeaderModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.ColumnHeaderModel;
 
 /**
  * Created by evrencoskun on 1.12.2017.

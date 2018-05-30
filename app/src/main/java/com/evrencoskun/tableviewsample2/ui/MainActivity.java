@@ -1,9 +1,11 @@
-package com.evrencoskun.tableviewsample2;
+package com.evrencoskun.tableviewsample2.ui;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.evrencoskun.tableviewsample2.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,14 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setContentView(R.layout.activity_main);
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.activity_container, new
                     MainFragment(), MainFragment.class.getSimpleName()).commit();
         }
 
-        hideNavigationBar();
+        //hideNavigationBar();
     }
 
     private void hideNavigationBar() {

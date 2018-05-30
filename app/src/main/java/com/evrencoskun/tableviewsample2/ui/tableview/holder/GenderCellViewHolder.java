@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.holder;
+package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.model.CellModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.CellModel;
 
 /**
  * Created by evrencoskun on 4.12.2017.

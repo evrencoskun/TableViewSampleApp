@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.model;
+package com.evrencoskun.tableviewsample2.ui.tableview.model;
 
 /**
  * Created by evrencoskun on 27.11.2017.

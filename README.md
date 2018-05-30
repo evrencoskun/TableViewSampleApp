@@ -25,7 +25,10 @@
 ## Libs used in sample app:
 
 - JSON data : https://github.com/ratiw/vue-table
-- Volley
+- Room 
+- ViewModel
+- Retrofit2
+- RxJava2 
 - GSON
 - MoneyTextView
 

@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.model;
+package com.evrencoskun.tableviewsample2.ui.tableview.model;
 
 import com.evrencoskun.tableview.sort.ISortableModel;
 

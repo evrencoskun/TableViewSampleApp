@@ -1,22 +1,25 @@
-package com.evrencoskun.tableviewsample2.tableview;
+package com.evrencoskun.tableviewsample2.ui.tableview;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.evrencoskun.tableview.adapter.AbstractTableAdapter;
+import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractSorterViewHolder;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.holder.CellViewHolder;
-import com.evrencoskun.tableviewsample2.tableview.holder.ColumnHeaderViewHolder;
-import com.evrencoskun.tableviewsample2.tableview.holder.GenderCellViewHolder;
-import com.evrencoskun.tableviewsample2.tableview.holder.MoneyCellViewHolder;
-import com.evrencoskun.tableviewsample2.tableview.holder.RowHeaderViewHolder;
-import com.evrencoskun.tableviewsample2.tableview.model.CellModel;
-import com.evrencoskun.tableviewsample2.tableview.model.ColumnHeaderModel;
-import com.evrencoskun.tableviewsample2.tableview.model.RowHeaderModel;
+import com.evrencoskun.tableviewsample2.data.database.entity.User;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.CellViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.ColumnHeaderViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.GenderCellViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.MoneyCellViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.RowHeaderViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.CellModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.ColumnHeaderModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.RowHeaderModel;
+
+import java.util.List;
 
 /**
  * Created by evrencoskun on 27.11.2017.
@@ -25,34 +28,38 @@ import com.evrencoskun.tableviewsample2.tableview.model.RowHeaderModel;
 public class MyTableAdapter extends AbstractTableAdapter<ColumnHeaderModel, RowHeaderModel,
         CellModel> {
 
+    private MyTableViewModel myTableViewModel;
+
     public MyTableAdapter(Context p_jContext) {
         super(p_jContext);
+
+        this.myTableViewModel = new MyTableViewModel();
     }
 
 
     @Override
-    public RecyclerView.ViewHolder onCreateCellViewHolder(ViewGroup parent, int viewType) {
+    public AbstractViewHolder onCreateCellViewHolder(ViewGroup parent, int viewType) {
         View layout;
 
         switch (viewType) {
-            case GENDER_TYPE:
+            case MyTableViewModel.GENDER_TYPE:
                 // Get gender cell xml Layout
-                layout = LayoutInflater.from(m_jContext).inflate(R.layout
+                layout = LayoutInflater.from(mContext).inflate(R.layout
                         .tableview_gender_cell_layout, parent, false);
 
                 return new GenderCellViewHolder(layout);
 
 
-            case MONEY_TYPE:
+            case MyTableViewModel.MONEY_TYPE:
                 // Get money cell xml Layout
-                layout = LayoutInflater.from(m_jContext).inflate(R.layout
+                layout = LayoutInflater.from(mContext).inflate(R.layout
                         .tableview_money_cell_layout, parent, false);
 
                 // Create the relevant view holder
                 return new MoneyCellViewHolder(layout);
             default:
                 // Get default Cell xml Layout
-                layout = LayoutInflater.from(m_jContext).inflate(R.layout.tableview_cell_layout,
+                layout = LayoutInflater.from(mContext).inflate(R.layout.tableview_cell_layout,
                         parent, false);
 
                 // Create a Cell ViewHolder
@@ -78,8 +85,8 @@ public class MyTableAdapter extends AbstractTableAdapter<ColumnHeaderModel, RowH
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateColumnHeaderViewHolder(ViewGroup parent, int viewType) {
-        View layout = LayoutInflater.from(m_jContext).inflate(R.layout
+    public AbstractSorterViewHolder onCreateColumnHeaderViewHolder(ViewGroup parent, int viewType) {
+        View layout = LayoutInflater.from(mContext).inflate(R.layout
                 .tableview_column_header_layout, parent, false);
 
         return new ColumnHeaderViewHolder(layout, getTableView());
@@ -97,11 +104,11 @@ public class MyTableAdapter extends AbstractTableAdapter<ColumnHeaderModel, RowH
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateRowHeaderViewHolder(ViewGroup parent, int viewType) {
+    public AbstractViewHolder onCreateRowHeaderViewHolder(ViewGroup parent, int viewType) {
 
         // Get Row Header xml Layout
-        View layout = LayoutInflater.from(m_jContext).inflate(R.layout
-                .tableview_row_header_layout, parent, false);
+        View layout = LayoutInflater.from(mContext).inflate(R.layout.tableview_row_header_layout,
+                parent, false);
 
         // Create a Row Header ViewHolder
         return new RowHeaderViewHolder(layout);
@@ -120,8 +127,7 @@ public class MyTableAdapter extends AbstractTableAdapter<ColumnHeaderModel, RowH
 
     @Override
     public View onCreateCornerView() {
-        return LayoutInflater.from(m_jContext).inflate(R.layout.tableview_corner_layout, null,
-                false);
+        return LayoutInflater.from(mContext).inflate(R.layout.tableview_corner_layout, null, false);
     }
 
     @Override
@@ -136,33 +142,21 @@ public class MyTableAdapter extends AbstractTableAdapter<ColumnHeaderModel, RowH
 
     @Override
     public int getCellItemViewType(int position) {
-        // 5. column header is gender.
-        if (position == 5) {
-            return GENDER_TYPE;
-        } else if (position == 8) {
-            // 8. column header is Salary.
-            return MONEY_TYPE;
-        }
-        /*
-        "Id"
-        "Name"
-        "Nickname"
-        "Email"
-        "Birthday"
-        "Gender"
-        "Age"
-        "Job"
-        "Salary"
-        "CreatedAt"
-        "UpdatedAt"
-        "Address"
-        "Zip Code"
-        "Phone"
-        "Fax"
-         */
-        return 0;
+        return myTableViewModel.getCellItemViewType(position);
     }
 
-    private static final int GENDER_TYPE = 1;
-    private static final int MONEY_TYPE = 2;
+
+    /**
+     * This method is not a generic Adapter method. It helps to generate lists from single user
+     * list for this adapter.
+     */
+    public void setUserList(List<User> userList) {
+        // Generate the lists that are used to TableViewAdapter
+        myTableViewModel.generateListForTableView(userList);
+
+        // Now we got what we need to show on TableView.
+        setAllItems(myTableViewModel.getColumHeaderModeList(), myTableViewModel
+                .getRowHeaderModelList(), myTableViewModel.getCellModelList());
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.popup;
+package com.evrencoskun.tableviewsample2.ui.tableview.popup;
 
 import android.content.Context;
 import android.view.Menu;
@@ -8,7 +8,7 @@ import android.widget.PopupMenu;
 import com.evrencoskun.tableview.ITableView;
 import com.evrencoskun.tableview.sort.SortState;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.holder.ColumnHeaderViewHolder;
+import com.evrencoskun.tableviewsample2.ui.tableview.holder.ColumnHeaderViewHolder;
 
 /**
  * Created by evrencoskun on 26.12.2017.

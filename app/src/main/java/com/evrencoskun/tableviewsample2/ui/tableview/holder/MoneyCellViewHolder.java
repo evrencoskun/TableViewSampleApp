@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.holder;
+package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
 import android.support.annotation.ColorRes;
 import android.support.v4.content.ContextCompat;
@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.model.CellModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.CellModel;
 
 import org.fabiomsr.moneytextview.MoneyTextView;
 
@@ -28,7 +28,7 @@ public class MoneyCellViewHolder extends AbstractViewHolder {
     public void setCellModel(CellModel p_jModel) {
 
         // Set text
-        cell_textview.setAmount((int) p_jModel.getData());
+        cell_textview.setAmount(Float.parseFloat((String) p_jModel.getData()));
 
         // It is necessary to remeasure itself.
         cell_container.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;

@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.holder;
+package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
 import android.support.v4.content.ContextCompat;
 import android.view.View;

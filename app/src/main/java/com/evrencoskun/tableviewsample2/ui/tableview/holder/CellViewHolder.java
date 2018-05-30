@@ -1,4 +1,4 @@
-package com.evrencoskun.tableviewsample2.tableview.holder;
+package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 import com.evrencoskun.tableviewsample2.R;
-import com.evrencoskun.tableviewsample2.tableview.model.CellModel;
+import com.evrencoskun.tableviewsample2.ui.tableview.model.CellModel;
 
 /**
  * Created by evrencoskun on 1.12.2017.
