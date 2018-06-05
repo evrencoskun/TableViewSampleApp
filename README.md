@@ -25,6 +25,7 @@
 ## Libs used in sample app:
 
 - JSON data : https://github.com/ratiw/vue-table
+- TableView 0.8.8
 - Room 
 - ViewModel
 - Retrofit2
