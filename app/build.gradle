@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.evrencoskun.tableviewsample2"
         minSdkVersion 15
-        targetSdkVersion 25
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -25,18 +25,18 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:$support_version"
-    implementation "com.android.support:support-v4:$support_version"
-    implementation "com.android.support:design:$support_version"
+    implementation "androidx.appcompat:appcompat:$support_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
+    implementation "com.google.android.material:material:$legacy_support_version"
 
     // Lifecycle
-    implementation "android.arch.lifecycle:runtime:$arch_version"
-    implementation "android.arch.lifecycle:extensions:$arch_version"
-    annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:$room_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$room_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$room_version"
 
     // Room
-    implementation "android.arch.persistence.room:runtime:$room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     // Retrofit2
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -59,8 +59,8 @@ dependencies {
     // Instrumentation dependencies use androidTestCompile"
     // (as opposed to testCompile for local unit tests run in the JVM"
     androidTestImplementation "junit:junit:$junit_version"
-    androidTestImplementation "com.android.support:support-annotations:$support_version"
-    androidTestImplementation "com.android.support.test:runner:$support_test_version"
-    androidTestImplementation "com.android.support.test:rules:$support_test_version"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_test_version"
+    androidTestImplementation "androidx.annotation:annotation:$support_test_version"
+    androidTestImplementation "androidx.test:runner:$support_test_runner_version"
+    androidTestImplementation "androidx.test:rules:$support_test_runner_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_test_version"
 }

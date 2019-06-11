@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath 'com.android.tools.build:gradle:3.4.1'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -27,9 +27,10 @@ task clean(type: Delete) {
 }
 
 
-ext.support_version = "27.1.1"
+ext.support_version = "1.0.2"
+ext.legacy_support_version = "1.0.0"
 ext.arch_version = "1.1.1"
-ext.room_version = "1.1.0"
+ext.room_version = "2.0.0"
 ext.retrofit_version = "2.3.0"
 ext.gson_version = "2.8.2"
 ext.rxjava_version = "2.1.6"
@@ -37,5 +38,6 @@ ext.rxandroid_version="2.0.1"
 ext.tableview_version="0.8.8"
 ext.moneyview_version="1.1.0"
 ext.junit_version = "4.12"
-ext.support_test_version = "1.0.2"
-ext.espresso_test_version = "3.0.2"
+ext.support_test_version = "1.1.0"
+ext.support_test_runner_version = "1.2.0"
+ext.espresso_test_version = "3.2.0"

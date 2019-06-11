@@ -1,7 +1,7 @@
 package com.evrencoskun.tableviewsample2.ui.viewmodel;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.evrencoskun.tableviewsample2.data.UserRepository;
 import com.evrencoskun.tableviewsample2.data.database.entity.User;

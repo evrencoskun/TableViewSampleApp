@@ -1,6 +1,6 @@
 package com.evrencoskun.tableviewsample2.ui.tableview.holder;
 
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
