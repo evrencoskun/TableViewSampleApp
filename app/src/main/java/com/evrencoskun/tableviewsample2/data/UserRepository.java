@@ -1,6 +1,6 @@
 package com.evrencoskun.tableviewsample2.data;
 
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.util.Log;
 
 import com.evrencoskun.tableviewsample2.AppExecutors;
