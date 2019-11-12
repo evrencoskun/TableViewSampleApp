@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkUtils {
 
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
-    private static final String BASE_URL = "http://vuetable.ratiw.net/api/";
+    private static final String BASE_URL = "https://vuetable.ratiw.net/api/";
 
     private static Retrofit getRetrofit() {
         return new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory
